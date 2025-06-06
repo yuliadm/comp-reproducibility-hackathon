@@ -1,13 +1,12 @@
 # comp-reproducibility-hackathon
 
 
-## Setting description
+## Setting
 * Trying to run the code and reproduce the code from https://github.com/GeertvanGeest/V-pipe/blob/master/docs/tutorial_sarscov2.md
-* env 'comprepr' created, running in main branch: (comprepr) @yuliadm ➜ /workspaces/comp-reproducibility-hackathon (main)  
 * **Infrastructure:** Windows 10, Visual Studio Code (recent), Github Codespaces, mobile internet connection
 
 
-1. `V-pipe`, `bioconda` and snakemake installation using the `quick_install.sh` script.
+## 1. `V-pipe`, `bioconda` and snakemake installation using the `quick_install.sh` script.
    
 * the script gets installed
 * `bash quick_install.sh -p vp-analysis -w work` raises Warning and an Error:
@@ -138,7 +137,7 @@ The structure of the project (pipeline) that I am getting right after the instal
     └───📁 …          #  …
 
 
-2. Checking installation by running
+## 2. Checking installation by running
 
 ```bash
 cd vp-analysis/work
