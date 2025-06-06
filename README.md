@@ -137,10 +137,7 @@ Installation of V-pipe completed
 
 ```
 
-The structure of the project (pipeline) that I am getting right after installation is different from that reported in the tutorial https://github.com/GeertvanGeest/V-pipe/blob/master/docs/tutorial_0_install.md
-
-
-:
+The structure of the project (pipeline) that I am getting right after the installation is different from that reported in the tutorial https://github.com/GeertvanGeest/V-pipe/blob/master/docs/tutorial_0_install.md (maybe to the installation issues at the previous steps):
 
 📁 [HOME]
 └───📁vp-analysis
@@ -225,15 +222,12 @@ critical libmamba Could not solve for environment specs
 ```
 
 
-1. Explicitly install dropbox first
-Sometimes, installing dropbox before snakemake helps the solver:
+Explicitly install dropbox.
 
-
-```
+```bash
 mamba install -c conda-forge dropbox=11.36.2 -y
 mamba install -c bioconda -c conda-forge snakemake=7.32.4 --strict-channel-priority -y
 ```
-
 
 Getting tons of incompatibility messages.
 
@@ -242,8 +236,7 @@ Getting tons of incompatibility messages.
 mamba install -c bioconda -c conda-forge snakemake-minimal=7.32.4 --strict-channel-priority -y
 ```
 
-
-3. Installing snakemake==7.32.4
+Alternative: try installing snakemake==7.32.4
 ```bash
 pip install snakemake==7.32.4
 ```
@@ -261,13 +254,10 @@ Snakemake is now being found and executed, but hitting a new error:
 AttributeError: module 'pulp' has no attribute 'list_solvers'. Did you mean: 'listSolvers'?
 ```
 
-Fix: You need to downgrade pulp to a version compatible with snakemake 7.32.4. The recommended version is `pulp==2.6.0`: pip install pulp==2.6.0
+**Fix:** downgrade pulp to a version compatible with snakemake 7.32.4. The recommended version is `pulp==2.6.0`: pip install pulp==2.6.0
 
 The dry run seems to be working after some tinkering. 
-Trying the small HIV sample.
-```bash
-./vpipe 
-```
+Trying the small HIV sample by running `bash ./vpipe`.
 
 Results in 
 ```bash
