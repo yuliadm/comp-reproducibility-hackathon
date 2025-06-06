@@ -4,7 +4,7 @@
 ## Setting description
 * Trying to run the code and reproduce the code from https://github.com/GeertvanGeest/V-pipe/blob/master/docs/tutorial_sarscov2.md
 * env 'comprepr' created, running in main branch: (comprepr) @yuliadm ➜ /workspaces/comp-reproducibility-hackathon (main)  
-* System specs: Windows10, VSCode, Github Codespaces, mobile internet connection
+* **System specs:** Windows10, Visual Studio Code (recent), Github Codespaces, mobile internet connection
 
 
 1. `V-pipe`, `bioconda` and snakemake installation.
