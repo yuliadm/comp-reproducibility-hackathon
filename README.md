@@ -1,9 +1,10 @@
-# comp-reproducibility-hackathon
+# Computational Reproducibility Hackathon
+## V-pipe: pipeline for analysis of next generation sequencing (https://github.com/GeertvanGeest/V-pipe)
 
 
 ## Setting
 * Trying to run the code and reproduce the code from https://github.com/GeertvanGeest/V-pipe/blob/master/docs/tutorial_sarscov2.md
-* **Infrastructure:** Windows 10, Visual Studio Code (recent), Github Codespaces, mobile internet connection
+* **Infrastructure:** Windows 10, Visual Studio Code (recent), GitHub Codespaces, Copilot, mobile internet connection
 
 
 ## 1. `V-pipe`, `bioconda` and snakemake installation using the `quick_install.sh` script.
