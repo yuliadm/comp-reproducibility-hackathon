@@ -4,14 +4,13 @@
 ## Setting description
 * Trying to run the code and reproduce the code from https://github.com/GeertvanGeest/V-pipe/blob/master/docs/tutorial_sarscov2.md
 * env 'comprepr' created, running in main branch: (comprepr) @yuliadm ➜ /workspaces/comp-reproducibility-hackathon (main)  
-* **System specs:** Windows10, Visual Studio Code (recent), Github Codespaces, mobile internet connection
+* **Infrastructure:** Windows 10, Visual Studio Code (recent), Github Codespaces, mobile internet connection
 
 
-1. `V-pipe`, `bioconda` and snakemake installation.
-a. installed `pip` just in case
-b. installation using the `quick_install.sh` script
-- the script gets installed
-- `bash quick_install.sh -p vp-analysis -w work` raises Warning and an Error:
+1. `V-pipe`, `bioconda` and snakemake installation using the `quick_install.sh` script.
+   
+* the script gets installed
+* `bash quick_install.sh -p vp-analysis -w work` raises Warning and an Error:
 
 ```bash
 Oops:You have conda or modules automatically loaded in your profile. This is can lead to potential conflicts and errors.
@@ -38,28 +37,16 @@ quick_install.sh: line 188: mamba: command not found
 Argh: I cannot install snakemake in environment V-pipe.
 ```
 
-Trying to fix mambaforge absence by running
+Trying to fix mambaforge absence by installing it manually:
 
 ```bash
 conda activate comprepr && conda install -c conda-forge mamba -y
 ```
 ✔️installed
 
-Re-run `quick_install.sh`
+Re-run `quick_install.sh`. Still produces errors:
 
-
-Errors:
 ```bash
-warning  libmamba The specification of the environment does not seem solvable in your current setup.
-warning  libmamba For instance, packages from different channels might be specified,
-warning  libmamba whilst your current configuration might not allow their resolution.
-warning  libmamba 
-warning  libmamba If it is the case, you need to either:
-warning  libmamba  - adapt the channel ordering (e.g. by reordering the `-c` flags in your command line)
-warning  libmamba  - use the flexible channel priority (e.g. using `--channel-priority flexible` in your command line)
-warning  libmamba 
-warning  libmamba For reference, see this piece of documentation on channel priority:
-warning  libmamba https://docs.conda.io/projects/conda/en/stable/user-guide/tasks/manage-channels.html#strict-channel-priority
 error    libmamba Could not solve for environment specs
     The following packages are incompatible
     ├─ pin on python =3.13 * is installable and it requires
@@ -107,8 +94,7 @@ critical libmamba Could not solve for environment specs
 
 ```
 
-this was somehow overridden...
-
+The above was somehow overridden... Automatically, and the V-pipe (partially?) was installed:
 
 ```bash
 
@@ -132,9 +118,7 @@ V-pipe project initialized!
 Create and populate 'samples' directory and/or adjust config.yaml.
 Then, use ./vpipe to run V-pipe.
 
-
 Installation of V-pipe completed
-
 ```
 
 The structure of the project (pipeline) that I am getting right after the installation is different from that reported in the tutorial https://github.com/GeertvanGeest/V-pipe/blob/master/docs/tutorial_0_install.md (maybe to the installation issues at the previous steps):
@@ -167,14 +151,13 @@ cp -r ../V-pipe/docs/example_HIV_data/* .
 ./vpipe 
 ```
 
-
 Getting an error:
 ```bash
 (comprepr) @yuliadm ➜ /workspaces/comp-reproducibility-hackathon/vp-analysis/work (main) $ ./vpipe -n
 ./vpipe: line 3: exec: snakemake: not found
 ```
 
-Trying to fix by running:
+Trying to fix by installing `snakemake` manually:
 
 ```bash
 conda activate comprepr && mamba install -c bioconda -c conda-forge snakemake -y
@@ -211,7 +194,7 @@ critical libmamba Could not solve for environment specs
 ```
 
 
-After downgrading the python version and the snakemake, 
+After downgrading the python (3.10 seems to work) version (had to recreate the environment a couple of times) and the snakemake (7.32.4)  
 
 ```bash
 mamba install -c bioconda -c conda-forge snakemake=7.32.4 --strict-channel-priority -y
@@ -227,8 +210,7 @@ error    libmamba Could not solve for environment specs
 critical libmamba Could not solve for environment specs
 ```
 
-
-Explicitly install dropbox.
+**Fix:** Explicitly install dropbox.
 
 ```bash
 mamba install -c conda-forge dropbox=11.36.2 -y
@@ -237,12 +219,12 @@ mamba install -c bioconda -c conda-forge snakemake=7.32.4 --strict-channel-prior
 
 Getting tons of incompatibility messages.
 
-2. Try installing snakemake-minimal
+Try installing snakemake-minimal
 ```bash
 mamba install -c bioconda -c conda-forge snakemake-minimal=7.32.4 --strict-channel-priority -y
 ```
 
-Alternative: try installing snakemake==7.32.4
+**Alternative fix:** Try installing snakemake==7.32.4
 ```bash
 pip install snakemake==7.32.4
 ```
@@ -253,7 +235,6 @@ Issues:
 
 DEPRECATION: Building 'stopit' using the legacy setup.py bdist_wheel mechanism, which will be removed in a future version. pip 25.3 will enforce this behaviour change. A possible replacement is to use the standardized build interface by setting the `--use-pep517` option, (possibly combined with `--no-build-isolation`), or adding a `pyproject.toml` file to the source tree of 'stopit'. Discussion can be found at https://github.com/pypa/pip/issues/6334  
 ```
-
 
 Snakemake is now being found and executed, but hitting a new error:
 ```bash
