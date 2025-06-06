@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+exec -a "$0" snakemake -s "/workspaces/comp-reproducibility-hackathon/vp-analysis/V-pipe/workflow/Snakefile" --use-conda "$@"

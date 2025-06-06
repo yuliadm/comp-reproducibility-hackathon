@@ -1,0 +1,17 @@
+VPIPE_BASEDIR = /workspaces/comp-reproducibility-hackathon/vp-analysis/V-pipe/workflow
+No virus base configuration, using defaults
+WARNING: No genes .gff file specified in section 'input' property 'genes_gff'.
+Searching ../V-pipe/resources/hiv/metainfo.yaml metainfo_file...
+Searching gff_directory ../V-pipe/resources/hiv/gffs/...
+WARNING: Autoselecting ../V-pipe/resources/hiv/gffs/GCF_000864765.1_ViralProj15476_genomic.gff <HIV-1 HXB2 annotations> from directory.
+Building DAG of jobs...
+Creating conda environment ../V-pipe/workflow/envs/preprocessing.yaml...
+Downloading and installing remote packages.
+CreateCondaEnvironmentException:
+Could not create conda environment from /workspaces/comp-reproducibility-hackathon/vp-analysis/V-pipe/workflow/envs/preprocessing.yaml:
+Command:
+mamba env create --quiet --file "/workspaces/comp-reproducibility-hackathon/vp-analysis/work/.snakemake/conda/99a95ea7e61fb60b56576f80acbc6acc_.yaml" --prefix "/workspaces/comp-reproducibility-hackathon/vp-analysis/work/.snakemake/conda/99a95ea7e61fb60b56576f80acbc6acc_"
+Output:
+error    libmamba Non-conda folder exists at prefix - aborting.
+critical libmamba Non-conda folder exists at prefix - aborting.
+
