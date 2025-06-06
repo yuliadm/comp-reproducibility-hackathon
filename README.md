@@ -140,11 +140,17 @@ Installation of V-pipe completed
 The structure of the project (pipeline) that I am getting right after the installation is different from that reported in the tutorial https://github.com/GeertvanGeest/V-pipe/blob/master/docs/tutorial_0_install.md (maybe to the installation issues at the previous steps):
 
 📁 [HOME]
+
 └───📁vp-analysis
+
     ├───📁V-pipe      # V-pipe checked out from Github
+
     ├───📁Miniforge3  # bioconda + conda-forge + mamba + Snakemake
+
     ├───📁work        # work directories
+
     ├───📁work-tests  #  …
+    
     └───📁 …          #  …
 
 
